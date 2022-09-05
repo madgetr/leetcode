@@ -19,9 +19,7 @@ func levelOrder(root *Node) [][]int {
         for i:=0;i<n;i++{
             root, q = q[0],q[1:]
             level = append(level,root.Val)
-            for _,c:=range root.Children {
-                q = append(q,c)
-            }
+            q = append(q,root.Children...)
         }
         ans = append(ans,level)
     }
